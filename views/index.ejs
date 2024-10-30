@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://fav.farm/💽" />
+    <title>Badila's Music Archive | home</title>
+</head>
+<body>
+    <h1>this is the homepage</h1>
+    <h2>Artists added to the archive:</h2>
+    <ul>
+        <% artists.map(artist => { %>
+            <li><%= artist.real_name + ' --- ' + artist.stage_name %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
