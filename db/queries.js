@@ -20,10 +20,16 @@ async function getAllLabels() {
     return rows
 }
 
+async function getNewReleases() {
+    const { rows } = await pool.query('SELECT albums.image, albums.title, artists.stage_name FROM albums INNER JOIN artists ON albums.artist_id = artists.id ORDER BY albums.released DESC;')
+    return rows
+}
+
 export default {
     getAllArtists,
     getAllAlbums,
     getAllGenres,
     getAllLabels,
-    
+    getNewReleases,
+
 }
