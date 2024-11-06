@@ -21,7 +21,7 @@ async function getAllLabels() {
 }
 
 async function getNewReleases() {
-    const { rows } = await pool.query('SELECT albums.image, albums.title, artists.stage_name FROM albums INNER JOIN artists ON albums.artist_id = artists.id ORDER BY albums.released DESC;')
+    const { rows } = await pool.query('SELECT albums.image, albums.title, artists.stage_name FROM albums INNER JOIN artists ON albums.artist_id = artists.id ORDER BY albums.released DESC LIMIT 10;')
     return rows
 }
 
