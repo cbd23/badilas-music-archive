@@ -1,44 +1,21 @@
-const sliderWrapper = document.querySelector('.slider-wrapper');
-const sliderBack = document.querySelector('.slider-back');
-const sliderForward = document.querySelector('.slider-forward');
-const sliderCards = document.querySelectorAll('.slider-card');
+// Get the slider wrapper and all the slider cards
+const sliderWrapper = document.querySelector('.slider-wrapper')
 
-let cardIndex = 0;
-let numCards = sliderCards.length / 2;
+// Duplicate the content inside the slider wrapper for a seamless scroll
+sliderWrapper.innerHTML += sliderWrapper.innerHTML
 
-function showCard(index) {
-  sliderWrapper.style.transform = `translateX(-${index * 320}px)`;
-  cardIndex = index;
-}
+// CSS-only animation speed: adjust this value for faster or slower scroll
+const animationSpeed = 20
 
-function slideBack() {
-  if (cardIndex === 0) {
-    showCard(numCards);
-  } else {
-    showCard(cardIndex - 1);
-  }
-}
+// Apply the CSS animation directly to the slider wrapper
+sliderWrapper.style.animation = `scrollAnimation ${animationSpeed}s linear infinite`
 
-function slideForward() {
-  if (cardIndex === numCards - 1) {
-    showCard(0);
-  } else {
-    showCard(cardIndex + 1);
-  }
-}
-
-sliderBack.addEventListener('click', slideBack);
-sliderForward.addEventListener('click', slideForward);
-
-// start auto slide every 3 seconds
-let slideInterval = setInterval(slideForward, 3000);
-
-// pause auto slide when mouse is over the slider
+// Pause the animation when hovering over the slider
 sliderWrapper.addEventListener('mouseover', () => {
-  clearInterval(slideInterval);
-});
+  sliderWrapper.style.animationPlayState = 'paused'
+})
 
-// resume auto slide when mouse leaves the slider
+// Resume the animation when the mouse leaves the slider
 sliderWrapper.addEventListener('mouseout', () => {
-  slideInterval = setInterval(slideForward, 3000);
-});
+  sliderWrapper.style.animationPlayState = 'running'
+})
