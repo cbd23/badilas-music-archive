@@ -9,13 +9,14 @@
 </head>
 <body>
     <header>
-        <h1>Home</h1>
+        <h1>Header text here</h1>
     </header>
     <nav>
+        <div class="app-name">BADILA'S</div>
         <section class="nav-home-section">
             <ul>
                 <li>
-                    <a href="/">
+                    <a href="/" class="home-nav-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
                         Home
                     </a>
@@ -31,7 +32,7 @@
         </section>
 
         <section class="nav-discover-section">
-            <h3 class="discover-heading">Discover</h3>
+            <h3 class="discover-heading">DISCOVER</h3>
             <ul>
                 <li>
                     <a href="/artists">
@@ -59,7 +60,7 @@
         </section>
 
         <section class="nav-add-section">
-            <h3>Add to archive</h3>
+            <h3>ADD TO ARCHIVE</h3>
             <ul>
                 <li>
                     <a href="/">
@@ -76,9 +77,45 @@
         
     </nav>
     <main>
-        <section class="main-section">section one</section>
-        <section class="main-section">section two</section>
-        <section class="main-section">section three</section>
+        <h2 class="section-title">New releases</h2>
+
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <% newReleases.forEach(album => { %>
+                    <a href="/albums">
+                        <div class="slider-card">
+                            <div class="album-photo">
+                                <img src="<%= album.image %>" alt="<%= album.title %>" style="height: 280px;">
+                            </div>
+                            <div class="album-text-details">
+                                <p class="album-title"><%= album.title %></p>
+                                <p class="artist-name"><%= album.stage_name %></p>
+                            </div>
+                        </div>
+                    </a>
+                <% }); %>
+            </div>
+            <!-- <button class="slider-button slider-back">&lt;</button>
+            <button class="slider-button slider-forward">&gt;</button> -->
+        </div>
+
+        <script>
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+          
+            // Pause the animation when hovering over the slider
+            sliderWrapper.addEventListener('mouseover', () => {
+              sliderWrapper.style.animationPlayState = 'paused';
+            });
+          
+            // Resume the animation when the mouse leaves the slider
+            sliderWrapper.addEventListener('mouseout', () => {
+              sliderWrapper.style.animationPlayState = 'running';
+            });
+          </script>
+         
+        <section class="main-section trending-artists-container">
+            <h2 class="section-title">Trending artists</h2>
+        </section>
     </main>
 </body>
 </html>
