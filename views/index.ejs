@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Header text here</h1>
+        <h1>search bar to be added here</h1>
     </header>
     <nav>
         <div class="app-name">BADILA'S</div>
@@ -28,9 +28,7 @@
                     </a>
                 </li>
             </ul>
-            
         </section>
-
         <section class="nav-discover-section">
             <h3 class="discover-heading">DISCOVER</h3>
             <ul>
@@ -58,7 +56,6 @@
                     Labels</a></li>
             </ul>
         </section>
-
         <section class="nav-add-section">
             <h3>ADD TO ARCHIVE</h3>
             <ul>
@@ -74,48 +71,55 @@
                 </li>
             </ul>
         </section>
-        
     </nav>
     <main>
-        <h2 class="section-title">New releases</h2>
-
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <% newReleases.forEach(album => { %>
-                    <a href="/albums">
-                        <div class="slider-card">
-                            <div class="album-photo">
-                                <img src="<%= album.image %>" alt="<%= album.title %>" style="height: 280px;">
+        <section class="main-section new-releases-container">
+            <h2 class="section-title">New Releases</h2>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <% newReleases.forEach(album => { %>
+                        <a href="/albums">
+                            <div class="slider-card">
+                                <div class="album-photo">
+                                    <img src="<%= album.image %>" alt="<%= album.title %>" style="height: 280px;">
+                                </div>
+                                <div class="album-text-details">
+                                    <p class="album-title"><%= album.title %></p>
+                                    <p class="artist-name"><%= album.stage_name %></p>
+                                </div>
                             </div>
-                            <div class="album-text-details">
-                                <p class="album-title"><%= album.title %></p>
-                                <p class="artist-name"><%= album.stage_name %></p>
-                            </div>
-                        </div>
-                    </a>
-                <% }); %>
+                        </a>
+                    <% }) %>
+                </div>
             </div>
-            <!-- <button class="slider-button slider-back">&lt;</button>
-            <button class="slider-button slider-forward">&gt;</button> -->
-        </div>
-
-        <script>
-            const sliderWrapper = document.querySelector('.slider-wrapper');
-          
-            // Pause the animation when hovering over the slider
-            sliderWrapper.addEventListener('mouseover', () => {
-              sliderWrapper.style.animationPlayState = 'paused';
-            });
-          
-            // Resume the animation when the mouse leaves the slider
-            sliderWrapper.addEventListener('mouseout', () => {
-              sliderWrapper.style.animationPlayState = 'running';
-            });
-          </script>
-         
+        </section>
         <section class="main-section trending-artists-container">
             <h2 class="section-title">Trending artists</h2>
+            <div class="trending-artists">
+                <% artists.forEach(artist => { %>
+                    <a href="/">
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="<%= artist.image %>" alt="<%= artist.stage_name %>" style="height: 150px;">
+                            </div>
+                            <p class="artist-name"><%= artist.stage_name %></p>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
         </section>
     </main>
+    <script>
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        // Pause the animation when hovering over the slider
+        sliderWrapper.addEventListener('mouseover', () => {
+          sliderWrapper.style.animationPlayState = 'paused';
+        });
+    
+        // Resume the animation when the mouse leaves the slider
+        sliderWrapper.addEventListener('mouseout', () => {
+          sliderWrapper.style.animationPlayState = 'running';
+        });
+      </script>
 </body>
 </html>
