@@ -25,11 +25,16 @@ async function getNewReleases() {
     return rows
 }
 
+async function getTrendingArtists() {
+    const { rows } = await pool.query('SELECT image, stage_name FROM artists ORDER BY stage_name DESC LIMIT 5;')
+    return rows
+}
+
 export default {
     getAllArtists,
     getAllAlbums,
     getAllGenres,
     getAllLabels,
     getNewReleases,
-
+    getTrendingArtists,
 }
