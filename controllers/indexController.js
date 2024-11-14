@@ -5,7 +5,7 @@ async function indexGet(req, res) {
     const newReleases = await db.getNewReleases()
 
     // fetch the artists
-    const artists = await db.getAllArtists()
+    const artists = await db.getTrendingArtists()
 
     res.render("index", { newReleases: newReleases, artists: artists })
 }
