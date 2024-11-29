@@ -5,7 +5,7 @@ const sliderWrapper = document.querySelector('.slider-wrapper')
 sliderWrapper.innerHTML += sliderWrapper.innerHTML
 
 // CSS-only animation speed: adjust this value for faster or slower scroll
-const animationSpeed = 20
+const animationSpeed = 40
 
 // Apply the CSS animation directly to the slider wrapper
 sliderWrapper.style.animation = `scrollAnimation ${animationSpeed}s linear infinite`
