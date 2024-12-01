@@ -50,6 +50,75 @@ header {
   display: flex;
   align-items: center;
   min-height: 75px;
+  padding: 0 20px;
+  background-color: #1e2640;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  width: 24px;
+  height: 24px;
+  fill: #f5f5f5; /* Icon color */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.searchbar {
+  width: 100%;
+  height: 50px; 
+  padding: 10px 15px 10px 50px; 
+  border: 0;
+  outline: 0;
+  border-radius: 8px;
+  font-size: 2rem;
+  color: #f5f5f5;
+  background-color: #1e2640;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchbar:focus {
+  background-color: #11192c;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.searchbar::placeholder {
+  color: #888;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.searchbar:focus::placeholder {
+  color: transparent;
+}
+
+.searchbar:focus::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  height: 1.2em;
+  width: 2px;
+  background-color: #f5f5f5;
+  animation: blink 1s steps(2, start) infinite;
+  transform: translateY(-50%);
+}
+
+/* Blinking animation */
+@keyframes blink {
+  0%, 50% {
+      opacity: 1;
+  }
+  51%, 100% {
+      opacity: 0;
+  }
 }
 
 h1 {
