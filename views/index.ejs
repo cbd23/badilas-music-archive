@@ -9,7 +9,12 @@
 </head>
 <body>
     <header>
-        <h1>search bar to be added here</h1>
+        <div class="search-container">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#f5f5f5">
+                <path d="M10 2a8 8 0 015.29 13.71l4 4a1 1 0 01-1.42 1.42l-4-4A8 8 0 1110 2zm0 2a6 6 0 100 12A6 6 0 0010 4z"/>
+            </svg>
+            <input type="text" class="searchbar" name="searchbar" placeholder="Search the archive">
+        </div>
     </header>
     <nav>
         <div class="app-name">BADILA'S</div>
@@ -78,7 +83,7 @@
             <div class="slider-container">
                 <div class="slider-wrapper">
                     <% newReleases.forEach(album => { %>
-                        <a href="/albums">
+                        <a href="/albums/<%= album.id %>">
                             <div class="slider-card">
                                 <div class="album-photo">
                                     <img src="<%= album.image %>" alt="<%= album.title %>" style="height: 280px;">
@@ -97,7 +102,7 @@
             <h2 class="section-title">Trending artists</h2>
             <div class="trending-artists">
                 <% artists.forEach(artist => { %>
-                    <a href="/">
+                    <a href="/artists/<%= artist.id%>">
                         <div class="artist-card">
                             <div class="artist-image">
                                 <img src="<%= artist.image %>" alt="<%= artist.stage_name %>" style="height: 150px;">
