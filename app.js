@@ -9,7 +9,6 @@ import artistsRouter from "./routes/artistsRouter.js"
 import albumsRouter from "./routes/albumsRouter.js"
 import genresRouter from "./routes/genresRouter.js"
 import labelsRouter from "./routes/labelsRouter.js"
-import wikiRouter from "./routes/wikiRouter.js"
 
 // define __filename & __dirname for ejs setup using ESM
 const __filename = fileURLToPath(import.meta.url)
