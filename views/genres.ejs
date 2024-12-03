@@ -78,7 +78,18 @@
         </section>
     </nav>
     <main>
-        
+        <section class="main-section all-genres-container">
+            <h2 class="section-title">Genres</h2>
+            <div class="all-genres">
+                <% genres.forEach(genre => { %>
+                    <a href="/genres/<%= genre.name %>">
+                        <div class="genre-card">
+                            <p class="genre-name"><%= genre.name %></p>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
+        </section>
     </main>
 </body>
 </html>
