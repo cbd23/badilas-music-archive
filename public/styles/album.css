@@ -165,39 +165,48 @@
     margin-top: 20px;
     margin-left: 20px;
   }
-  
-  .sort-by-btn {
-    border: 1px solid whitesmoke;
-    width: 50px;
-    margin: 0 20px 0 auto;
-    text-align: center;
-  }
 
   .album-card {
+    padding: 6px;
     height: 100%;
-    display: flex;
-  }
-
-  .album-leftside-info {
-    flex: 2;
-    padding: 20px;
-  }
-
-  .album-intro {
-    width: 100%;
-  }
-
-  .album-rightside-info {
-    border: 1px solid white;
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+  }
+
+  .album-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex: 2;
+    gap: 20px;
     padding: 4px 0;
   }
 
-  .rightside-title {
+  .album-info-leftside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .album-info-rightside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .album-intro {
+    margin-top: 14px;
+    display: flex;
+    flex: 1;
+    width: 70vw;
+    line-height: 1.5rem;
+    overflow: scroll;
+  }
+
+  .title {
     background-color: #11192c;
     min-width: 280px;
     text-align: center;
@@ -206,14 +215,14 @@
     padding: 4px 8px;
   }
 
-  .rightside-context {
+  .context {
     background-color: #11192c;
     min-width: 280px;
     text-align: center;
     padding: 4px 8px;
   }
 
-  .rightside-details {
+  .details {
     width: 280px;
     display: flex;
     flex-direction: column;
@@ -221,6 +230,6 @@
     line-height: 1.5rem;
   }
 
-  .album-rightside-info span {
+  .album-info span {
     font-weight: 700;
   }
