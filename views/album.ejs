@@ -81,20 +81,19 @@
         <section class="main-section album-container">
             <h2 class="album-title"><%= album.title %></h2>
             <div class="album-card">
-                <div class="album-leftside-info">
-                    <div class="album-intro">Lorem ipsum about the album. Lorem ipsum about the album. Lorem ipsum about the album. Lorem ipsum about the album. Lorem ipsum about the album. Lorem ipsum about the album. </div>
-                </div>
-                <div class="album-rightside-info">
-                    <div class="rightside-title"><%= album.title %></div>
-                    <img src="<%= album.image %>" alt="<%= album.title %>" height="250px">
-                    <div class="rightside-context"> Studio album by <%= album.stage_name %></div>
-                    <br>
-                    <div class="rightside-details">
+                <div class="album-info">
+                    <div class="album-info-leftside">
+                        <div class="title"><%= album.title %></div>
+                        <img src="<%= album.image %>" alt="<%= album.title %>" height="400px">
+                        <div class="context"> Studio album by <%= album.stage_name %></div>
+                    </div>
+                    <div class="album-info-rightside">
                         <div class="album-release-date"><span>Released:</span> <%= album.released %></div>
                         <div class="album-genre"><span>Genre:</span> <%= album.genres %></div>
                         <div class="album-label"><span>Label:</span> <%= album.label %></div>
-                    </div>
+                    </div>                    
                 </div>
+                <div class="album-intro"><%= intro %></div>
             </div>
         </section>
     </main>
