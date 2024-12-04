@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/labels.css">
+    <link rel="stylesheet" href="/styles/albums.css">
     <link rel="icon" href="https://fav.farm/💽" />
-    <title>Badila's Music Archive | labels</title>
+    <title>Badila's Music Archive | albums</title>
 </head>
 <body>
     <header>
@@ -78,14 +78,17 @@
         </section>
     </nav>
     <main>
-        <section class="main-section all-labels-container">
-            <h2 class="section-title">Labels</h2>
-            <p class="sort-by-btn">sort by</p>
-            <div class="all-labels">
-                <% labels.forEach(label => { %>
-                    <a href="/labels/<%= label.id %>">
-                        <div class="label-card">
-                            <p class="label-name"><%= label.name %></p>
+        <section class="main-section all-albums-container">
+            <h2 class="section-title"><%= labelName %></h2>
+            <div class="all-albums">
+                <% albumsHavingLabel.forEach(album => { %>
+                    <a href="/albums/<%= album.id %>">
+                        <div class="album-card">
+                            <div class="album-image">
+                                <img src="<%= album.image %>" alt="<%= album.title %>" style="height: 200px;">
+                            </div>
+                            <p class="album-name"><%= album.title %></p>
+                            <p class="artist-name"><%= album.stage_name %></p>
                         </div>
                     </a>
                 <% }) %>

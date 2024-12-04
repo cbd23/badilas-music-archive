@@ -17,7 +17,7 @@
         </div>
     </header>
     <nav>
-        <div class="app-name">BADILA'S</div>
+        <div class="app-name"><a href="/">BADILA'S</a></div>
         <section class="nav-home-section">
             <ul>
                 <li>
@@ -85,7 +85,8 @@
                     <div class="album-info-leftside">
                         <div class="title"><%= album.title %></div>
                         <img src="<%= album.image %>" alt="<%= album.title %>" height="400px">
-                        <div class="context"> Studio album by <%= album.stage_name %></div>
+                        <!-- the id inside the anchor below is actually an artist ID, not album ID -->
+                        <div class="context">Studio album by&nbsp;<a href="/artists/<%= album.id %>"><%= album.stage_name %></a></div>
                     </div>
                     <div class="album-info-rightside">
                         <div class="album-release-date"><span>Released:</span> <%= album.released %></div>
