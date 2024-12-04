@@ -12,7 +12,9 @@ async function albumsHavingGenreGet(req, res) {
 
     const albumsHavingGenre = await db.getAlbumsHavingGenre(id)
 
-    res.render("albumsHavingGenre", { albumsHavingGenre: albumsHavingGenre })
+    const genreName = albumsHavingGenre.length > 0 ? albumsHavingGenre[0].name + " albums" : "Sorry, no albums found for the selected genre."
+
+    res.render("albumsHavingGenre", { albumsHavingGenre: albumsHavingGenre, genreName: genreName })
 }
 
 export const genresController = {
