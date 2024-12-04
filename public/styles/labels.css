@@ -135,7 +135,7 @@
     margin-left: 10px;
   }
   
-  .app-name {
+  .app-name > a {
     margin: 20px 10px 30px;
     font-size: 1.5rem;
     font-weight: 700;
@@ -152,4 +152,44 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  section.main-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  section.main-section > h2 {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .sort-by-btn {
+    border: 1px solid whitesmoke;
+    width: 50px;
+    margin: 0 20px 0 auto;
+    text-align: center;
+  }
+  
+  .all-labels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .label-card {
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    width: 260px;
+    height: 80px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
