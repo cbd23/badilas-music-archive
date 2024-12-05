@@ -3,7 +3,7 @@ import db from "../db/queries.js"
 import { formatTitleForWiki } from "../public/js/utils.js"
 
 async function albumsGet(req, res) {
-    const albums = await db.getAllAlbums()
+    const albums = await db.getAllAlbumsAsc()
     res.render("albums", { albums: albums })
 }
 
