@@ -14,5 +14,5 @@ async function albumsHavingLabelGet(req, res) {
 
 export const labelsController = {
     labelsGet,
-    albumsHavingLabelGet,
+    albumsHavingLabelGet
 }
