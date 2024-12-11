@@ -169,8 +169,6 @@ section.main-section > h2 {
 }
 
 .artist-card {
-  border: 1px solid white;
-
   padding: 6px;
   height: 100%;
   display: flex;
@@ -178,61 +176,76 @@ section.main-section > h2 {
 }
 
 .card-leftside {
-  border: 1px solid blue;
-
   flex: 2;
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .wiki-intro {
   border: 1px solid hotpink;
 }
 
-.albums-container {
-  border: 1px solid orange;
+.card-leftside > h3 {
+  margin: 14px 0 0 0;
+  color: white;
+}
 
+.albums-container {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  overflow: scroll;
 }
 
 .album-card {
-    border: 1px solid red;
+  width: 150px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-card img {
+  border-radius: 8px;
 }
 
 .card-rightside {
-  border: 1px solid red;
-
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.album-title {
+  margin: 2px 0 0 2px;
 }
 
 .artist-img {
-  /* border: 1px solid white; */
-
   display: flex;
   justify-content: center;
 }
 
 .artist-stage-name {
-    background-color: #11192c;
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 10px 0;
-    padding: 4px 0;
+  background-color: #11192c;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0;
+  padding: 4px 0;
+  min-width: 250px;
+  align-self: center;
 }
 
 .about {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding: 20px 0;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .about span {
-    font-weight: 700;
+  font-weight: 700;
 }
