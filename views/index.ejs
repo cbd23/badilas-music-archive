@@ -9,12 +9,14 @@
 </head>
 <body>
     <header>
-        <div class="search-container">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#f5f5f5">
-                <path d="M10 2a8 8 0 015.29 13.71l4 4a1 1 0 01-1.42 1.42l-4-4A8 8 0 1110 2zm0 2a6 6 0 100 12A6 6 0 0010 4z"/>
-            </svg>
-            <input type="text" class="searchbar" name="searchbar" placeholder="Search the archive">
-        </div>
+        <form action="/search" method="GET">
+            <div class="search-container">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#f5f5f5">
+                    <path d="M10 2a8 8 0 015.29 13.71l4 4a1 1 0 01-1.42 1.42l-4-4A8 8 0 1110 2zm0 2a6 6 0 100 12A6 6 0 0010 4z"/>
+                </svg>
+                <input type="text" class="searchbar" name="SearchTerm" placeholder="Search the archive">
+            </div>
+        </form>
     </header>
     <nav>
         <div class="app-name"><a href="/">BADILA'S</a></div>
@@ -115,16 +117,17 @@
         </section>
     </main>
     <script>
-        const sliderWrapper = document.querySelector('.slider-wrapper');
-        // Pause the animation when hovering over the slider
+        const sliderWrapper = document.querySelector('.slider-wrapper')
+
+        // pause the animation when hovering over the slider
         sliderWrapper.addEventListener('mouseover', () => {
-          sliderWrapper.style.animationPlayState = 'paused';
-        });
+          sliderWrapper.style.animationPlayState = 'paused'
+        })
     
-        // Resume the animation when the mouse leaves the slider
+        // resume the animation when the mouse leaves the slider
         sliderWrapper.addEventListener('mouseout', () => {
-          sliderWrapper.style.animationPlayState = 'running';
-        });
+          sliderWrapper.style.animationPlayState = 'running'
+        })
       </script>
 </body>
 </html>
