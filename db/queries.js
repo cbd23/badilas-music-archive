@@ -22,7 +22,7 @@ async function getTrendingArtists() {
 
 // GET ALL INFO ABOUT A SPECIFIC ARTIST
 async function getArtist(id) {
-    const { rows } = await pool.query('SELECT artists.id AS artist_id, artists.stage_name AS artist_stage_name, artists.real_name AS artist_real_name, artists.country AS artist_country, artists.image AS artist_img, albums.id AS album_id, albums.image AS album_img, albums.title AS album_title FROM artists INNER JOIN albums ON artists.id = albums.artist_id WHERE artists.id = $1;', [id])
+    const { rows } = await pool.query('SELECT artists.id AS artist_id, artists.stage_name AS artist_stage_name, artists.real_name AS artist_real_name, artists.country AS artist_country, artists.image AS artist_img, albums.id AS album_id, albums.image AS album_img, albums.title AS album_title, albums.released AS album_released FROM artists INNER JOIN albums ON artists.id = albums.artist_id WHERE artists.id = $1 ORDER BY album_released DESC;', [id])
     return rows
 }
 
