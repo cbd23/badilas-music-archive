@@ -82,7 +82,8 @@
             <h2 class="artist-title"><%= artist[0].artist_stage_name %></h2>
             <div class="artist-card">
                 <div class="card-leftside">
-                    <div class="wiki-intro">Curtis James Jackson III (born July 6, 1975),[3] known professionally as 50 Cent,[n 1] is an American rapper, actor, and businessman. Born in South Jamaica, a neighborhood of Queens, Jackson began pursuing a musical career in 1996. In 1999–2000, he recorded his debut album Power of the Dollar for Columbia Records; however, he was struck by nine bullets during a shooting in May 2000, causing its release to be cancelled and Jackson to be dropped from the label. His 2002 mixtape, Guess Who's Back? was discovered by Detroit rapper Eminem, who signed Jackson to his label Shady Records, an imprint of Dr. Dre's Aftermath Entertainment and Interscope Records that same year.</div>
+                    <div class="wiki-intro"><%= intro %></div>
+                    <h3>Discography</h3>
                     <div class="albums-container">
                         <% artist.forEach(item => { %>
                             <a href="/albums/<%= item.album_id %>">
