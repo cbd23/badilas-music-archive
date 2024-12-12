@@ -92,6 +92,28 @@ async function getAllLabels() {
     return rows
 }
 
+async function getSearchResults(searchTerm) {
+    const query = `
+        SELECT stage_name AS result_name, 'Artist' AS result_type
+        FROM artists
+        WHERE LOWER(stage_name) LIKE LOWER($1)
+           OR LOWER(real_name) LIKE LOWER($1)
+        UNION
+        SELECT title AS result_name, 'Album' AS result_type
+        FROM albums
+        WHERE LOWER(title) LIKE LOWER($1)
+           OR artist_id IN (
+               SELECT id
+               FROM artists
+               WHERE LOWER(stage_name) LIKE LOWER($1)
+                  OR LOWER(real_name) LIKE LOWER($1)
+           );
+    `
+    const values = [`%${searchTerm}%`]
+    const result = await pool.query(query, values)
+    return result.rows
+}
+
 export default {
     getAllArtistsAsc,
     getAllArtistsDesc,
@@ -105,4 +127,5 @@ export default {
     getAlbumsHavingLabel,
     getAllGenres,
     getAllLabels,
+    getSearchResults,
 }
