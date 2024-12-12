@@ -94,12 +94,12 @@ async function getAllLabels() {
 
 async function getSearchResults(searchTerm) {
     const query = `
-        SELECT stage_name AS result_name, 'Artist' AS result_type
+        SELECT stage_name AS result_name, 'Artist' AS result_type, image AS result_image, id AS result_id
         FROM artists
         WHERE LOWER(stage_name) LIKE LOWER($1)
            OR LOWER(real_name) LIKE LOWER($1)
         UNION
-        SELECT title AS result_name, 'Album' AS result_type
+        SELECT title AS result_name, 'Album' AS result_type, image AS result_image, id AS result_id
         FROM albums
         WHERE LOWER(title) LIKE LOWER($1)
            OR artist_id IN (
