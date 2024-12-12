@@ -197,7 +197,7 @@ section.main-section > h2 {
 
 .album-card {
   width: 150px;
-  height: 190px;
+  height: 220px;
   display: flex;
   flex-direction: column;
 }
