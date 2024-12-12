@@ -5,11 +5,19 @@ async function searchResultsGet(req, res) {
     const searchTerm = req.query.SearchTerm
 
     try {
-        const results = await db.getSearchResults(searchTerm)
-        res.render("search", { searchTerm, results })
-    } catch (error) {
-        console.error("Error fetching search results:", error)
-        res.status(500).send("An error occurred while processing your request.")
+        // get search results
+        const results = await db.getSearchResults(searchTerm);
+
+        // filter results to separate albums and artists
+        const albums = results.filter(result => result.result_type === 'Album');
+        const artists = results.filter(result => result.result_type === 'Artist');
+
+        // pass the results to the view
+        res.render("search", { searchTerm, albums, artists });
+    } catch (err) {
+        console.error("Error fetching search results:", err);
+        // if an error occurs, send empty arrays for albums and artists
+        res.render("search", { searchTerm, albums: [], artists: [] });
     }
 }
 
