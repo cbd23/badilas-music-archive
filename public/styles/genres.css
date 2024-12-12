@@ -54,6 +54,10 @@ header {
   background-color: #1e2640;
 }
 
+header > form {
+  width: 100%;
+}
+
 .search-container {
   position: relative;
   width: 100%;
