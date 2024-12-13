@@ -26,15 +26,28 @@ async function getArtist(id) {
     return rows
 }
 
-// TO BE ADDED:
+// BY Popularity
+async function getTopTrendingArtists() {
+    const { rows } = await pool.query('SELECT id, image, stage_name FROM artists ORDER BY popularity_rating DESC;')
+    return rows
+}
 
-// BY Popularity ASC
-
-// BY Popularity DESC
-
-// BY ALBUMS NUMBER DESC
-
-// BY ALBUMS NUMBER ASC
+// BY ALBUMS NUMBER
+async function getArtistsByAlbumsNumber() {
+    const query = `
+        SELECT 
+            artists.id, 
+            artists.image, 
+            artists.stage_name, 
+            COUNT(albums.id) AS album_count
+        FROM artists
+        LEFT JOIN albums ON artists.id = albums.artist_id
+        GROUP BY artists.id
+        ORDER BY album_count DESC;
+    `;
+    const { rows } = await pool.query(query);
+    return rows;
+}
 
 
 // GET ALBUMS ###############
@@ -119,6 +132,8 @@ export default {
     getAllArtistsDesc,
     getTrendingArtists,
     getArtist,
+    getTopTrendingArtists,
+    getArtistsByAlbumsNumber,
     getNewReleases,
     getAllAlbumsAsc,
     getAllAlbumsDesc,
