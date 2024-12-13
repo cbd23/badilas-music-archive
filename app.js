@@ -10,6 +10,7 @@ import albumsRouter from "./routes/albumsRouter.js"
 import genresRouter from "./routes/genresRouter.js"
 import labelsRouter from "./routes/labelsRouter.js"
 import searchRouter from "./routes/searchRouter.js"
+import aboutRouter from "./routes/aboutRouter.js"
 
 // define __filename & __dirname for ejs setup using ESM
 const __filename = fileURLToPath(import.meta.url)
@@ -34,8 +35,8 @@ app.use("/artists", artistsRouter)
 app.use("/albums", albumsRouter)
 app.use("/genres", genresRouter)
 app.use("/labels", labelsRouter)
+app.use("/about", aboutRouter)
 app.use("/", indexRouter)
-
 
 
 const PORT = 3000
