@@ -3,8 +3,24 @@ import { formatNameForWiki } from "../public/js/utils.js"
 import db from "../db/queries.js"
 
 async function artistsGet(req, res) {
-    const artists = await db.getAllArtistsAsc()
-    res.render("artists", { artists: artists })
+    // get the sort parameter from the query string
+    const { sort } = req.query
+
+    let artists
+
+    // determine the sorting logic
+    if (sort === 'most-albums') {
+        artists = await db.getArtistsByAlbumsNumber()
+    } else if (sort === 'a-z') {
+        artists = await db.getAllArtistsAsc()
+    } else if (sort === 'z-a') {
+        artists = await db.getAllArtistsDesc()
+    } else {
+        // default to 'top-trending'
+        artists = await db.getTopTrendingArtists()
+    }
+
+    res.render("artists", { artists: artists, sort: sort })
 }
 
 async function artistGet(req, res) {
