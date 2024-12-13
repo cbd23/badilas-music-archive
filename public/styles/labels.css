@@ -170,13 +170,6 @@
     margin-left: 20px;
   }
   
-  .sort-by-btn {
-    border: 1px solid whitesmoke;
-    width: 50px;
-    margin: 0 20px 0 auto;
-    text-align: center;
-  }
-  
   .all-labels {
     display: flex;
     flex-wrap: wrap;
