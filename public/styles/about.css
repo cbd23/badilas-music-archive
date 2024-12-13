@@ -160,3 +160,55 @@ main {
   gap: 10px;
 }
 
+.about-page {
+    margin: 20px auto;
+    max-width: 90%;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    color: #1db654;
+    margin-bottom: 15px;    
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+p > span {
+    font-weight: 700;
+    color: #d03d62;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+button {
+    outline: none;
+    background-color: inherit;
+    border: 1px solid whitesmoke;
+    border-radius: 8px;
+    padding: 14px;
+    width: auto;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+}
+
+button:hover {
+    background-color: #11192c;
+}
