@@ -82,7 +82,17 @@
     <main>
         <section class="main-section all-artists-container">
             <h2 class="section-title">Artists</h2>
-            <p class="sort-by-btn">sort by</p>
+            <div class="sort-by-container">
+                <form method="GET" action="/artists">
+                    <label for="sort-options">Sort by</label>
+                    <select name="sort" class="sort-by-dropdown" onchange="this.form.submit()">
+                        <option value="top-trending" <% if (sort === "top-trending") { %>selected<% } %>>Top trending</option>
+                        <option value="most-albums" <% if (sort === "most-albums") { %>selected<% } %>>Most albums</option>
+                        <option value="a-z" <% if (sort === "a-z") { %>selected<% } %>>A - Z</option>
+                        <option value="z-a" <% if (sort === "z-a") { %>selected<% } %>>Z - A</option>
+                    </select>
+                </form>
+            </div>
             <div class="all-artists">
                 <% artists.forEach(artist => { %>
                     <a href="/artists/<%= artist.id %>">
@@ -97,5 +107,18 @@
             </div>
         </section>
     </main>
+    <script>
+        function handleSortChange() {
+            const selectedOption = document.getElementById("sort-options").value;
+            const currentUrl = window.location.pathname;
+            const params = new URLSearchParams(window.location.search);
+
+            // Update the "sort" parameter in the query string
+            params.set("sort", selectedOption);
+
+            // Redirect to the updated URL
+            window.location.href = `${currentUrl}?${params.toString()}`;
+        }
+    </script>
 </body>
 </html>
