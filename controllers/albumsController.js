@@ -59,6 +59,9 @@ async function albumGet(req, res) {
         album: album,
         intro: intro,
     })
+
+    // Increment albums's times_played
+    db.updateAlbumTimesPlayed(albumId)
 }
 
 export const albumsController = {
