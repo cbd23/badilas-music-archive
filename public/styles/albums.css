@@ -174,11 +174,41 @@ section.main-section > h2 {
   margin-left: 20px;
 }
 
-.sort-by-btn {
-  border: 1px solid whitesmoke;
-  width: 50px;
-  margin: 0 20px 0 auto;
+.sort-by-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 12px 20px 12px auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+.sort-by-container form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-by-container label {
+  font-weight: bold;
+}
+
+.sort-by-container select.sort-by-dropdown {
+  background-color: inherit;
+  padding: 4px 8px;
+  font-size: 16px;
   text-align: center;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  color: whitesmoke;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sort-by-container select.sort-by-dropdown:focus {
+  border-color: #aaa;
 }
 
 .all-albums {
