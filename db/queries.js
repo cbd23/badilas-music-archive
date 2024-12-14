@@ -20,6 +20,11 @@ async function getTrendingArtists() {
     return rows
 }
 
+// UPDATE ARTIST'S 'popularity_score' WHEN THEIR PAGE IS VISITED
+async function updateArtistPopScore(id) {
+    await pool.query('UPDATE artists SET popularity_score = popularity_score + 1 WHERE artists.id = $1;', [id])
+}
+
 // GET ALL INFO ABOUT A SPECIFIC ARTIST
 async function getArtist(id) {
     const { rows } = await pool.query('SELECT artists.id AS artist_id, artists.stage_name AS artist_stage_name, artists.real_name AS artist_real_name, artists.country AS artist_country, artists.image AS artist_img, albums.id AS album_id, albums.image AS album_img, albums.title AS album_title, albums.released AS album_released FROM artists INNER JOIN albums ON artists.id = albums.artist_id WHERE artists.id = $1 ORDER BY album_released DESC;', [id])
@@ -143,6 +148,7 @@ export default {
     getAllArtistsAsc,
     getAllArtistsDesc,
     getTrendingArtists,
+    updateArtistPopScore,
     getArtist,
     getTopTrendingArtists,
     getArtistsByAlbumsNumber,
