@@ -20,7 +20,7 @@ async function getTrendingArtists() {
     return rows
 }
 
-// UPDATE ARTIST'S 'popularity_rating' WHEN THEIR PAGE IS VISITED
+// UPDATE ARTIST'S 'popularity_rating'
 async function updateArtistPopRating(id) {
     await pool.query('UPDATE artists SET popularity_rating = popularity_rating + 1 WHERE artists.id = $1;', [id])
 }
@@ -79,6 +79,11 @@ async function getAllAlbumsDesc() {
 async function getMostPlayedAlbums() {
     const { rows } = await pool.query('SELECT * FROM albums ORDER BY albums.times_played DESC;')
     return rows
+}
+
+// UPDATE ALBUM'S 'times_played'
+async function updateAlbumTimesPlayed(id) {
+    await pool.query('UPDATE albums SET times_played = times_played + 1 WHERE albums.id = $1;', [id])
 }
 
 // GET ALBUMS BY RELEASE DATE DESC
@@ -148,7 +153,7 @@ export default {
     getAllArtistsAsc,
     getAllArtistsDesc,
     getTrendingArtists,
-    updateArtistPopScore,
+    updateArtistPopRating,
     getArtist,
     getTopTrendingArtists,
     getArtistsByAlbumsNumber,
@@ -156,6 +161,7 @@ export default {
     getAllAlbumsAsc,
     getAllAlbumsDesc,
     getMostPlayedAlbums,
+    updateAlbumTimesPlayed,
     getRecentlyReleasedAlbums,
     getAlbum,
     getAlbumsHavingGenre,
