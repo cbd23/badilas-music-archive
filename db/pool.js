@@ -4,5 +4,8 @@ const { Pool } = pkg
 import 'dotenv/config'
 
 export default new Pool({
-    connectionString: `postgresql://${process.env.USERNAME}:${process.env.PASSWORD}@localhost:5432/music_archive`
+    connectionString: process.env.DATABASE_PUBLIC_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 })
