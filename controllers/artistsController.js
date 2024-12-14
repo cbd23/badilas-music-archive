@@ -55,6 +55,9 @@ async function artistGet(req, res) {
 
     // render the artist page with artist details and intro
     res.render("artist", { artist: artist, intro: intro })
+
+    // increment artist's popularity_rating when their page is visited
+    db.updateArtistPopRating(id)
 }
 
 export const artistsController = {
