@@ -20,9 +20,9 @@ async function getTrendingArtists() {
     return rows
 }
 
-// UPDATE ARTIST'S 'popularity_score' WHEN THEIR PAGE IS VISITED
-async function updateArtistPopScore(id) {
-    await pool.query('UPDATE artists SET popularity_score = popularity_score + 1 WHERE artists.id = $1;', [id])
+// UPDATE ARTIST'S 'popularity_rating' WHEN THEIR PAGE IS VISITED
+async function updateArtistPopRating(id) {
+    await pool.query('UPDATE artists SET popularity_rating = popularity_rating + 1 WHERE artists.id = $1;', [id])
 }
 
 // GET ALL INFO ABOUT A SPECIFIC ARTIST
