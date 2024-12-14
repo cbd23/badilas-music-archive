@@ -70,6 +70,18 @@ async function getAllAlbumsDesc() {
     return rows
 }
 
+// GET MOST LISTENED ALBUMS
+async function getMostPlayedAlbums() {
+    const { rows } = await pool.query('SELECT * FROM albums ORDER BY albums.times_played DESC;')
+    return rows
+}
+
+// GET ALBUMS BY RELEASE DATE DESC
+async function getRecentlyReleasedAlbums() {
+    const { rows } = await pool.query('SELECT * FROM albums ORDER BY albums.released DESC;')
+    return rows
+}
+
 // GET ALL ALBUMS WITH A SPECIFIC GENRE
 async function getAlbumsHavingGenre(id) {
     const { rows } = await pool.query('SELECT albums.*, artists.stage_name, genres.name FROM albums INNER JOIN genres_on_album ON albums.id = genres_on_album.album_id INNER JOIN genres ON genres_on_album.genre_id = genres.id INNER JOIN artists ON albums.artist_id = artists.id WHERE genres.id = $1 ORDER BY albums.released DESC;', [id])
@@ -137,6 +149,8 @@ export default {
     getNewReleases,
     getAllAlbumsAsc,
     getAllAlbumsDesc,
+    getMostPlayedAlbums,
+    getRecentlyReleasedAlbums,
     getAlbum,
     getAlbumsHavingGenre,
     getAlbumsHavingLabel,
