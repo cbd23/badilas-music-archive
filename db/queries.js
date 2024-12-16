@@ -16,7 +16,7 @@ async function getAllArtistsDesc() {
 
 // TRENDING ARTISTS - DISPLAYED ON THE HOMEPAGE
 async function getTrendingArtists() {
-    const { rows } = await pool.query('SELECT id, image, stage_name FROM artists ORDER BY stage_name DESC LIMIT 5;')
+    const { rows } = await pool.query('SELECT id, image, stage_name FROM artists ORDER BY popularity_rating DESC LIMIT 5;')
     return rows
 }
 
