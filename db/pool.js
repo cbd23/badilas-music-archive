@@ -4,5 +4,8 @@ const { Pool } = pkg
 import 'dotenv/config'
 
 export default new Pool({
-    connectionString: process.env.DATABASE_PUBLIC_URL
+    connectionString: process.env.DATABASE_PUBLIC_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 })
