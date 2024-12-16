@@ -42,4 +42,5 @@ app.use("/", indexRouter)
 const PORT = process.env.PORT || 3000
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`server is running on PORT:${PORT}`)
+    console.log('DATABASE_PUBLIC_URL', process.env.DATABASE_PUBLIC_URL)
 })
