@@ -74,6 +74,7 @@ I didn't want to use an API for fetching the music albums / artists / genres or 
 
 <br>
 You can browse to my other repos to see what I've been working on lately or you can <a href="https://www.linkedin.com/in/catalin-badila/">connect with me on linkedin</a> and say hi if you want
-
+<br>
+<br>
 
 <a href="#top">⬆️Back to Top</a>
