@@ -18,6 +18,7 @@ The project aims to become a dynamic hub where music enthusiasts can share what 
 <img width="1468" alt="homepage" src="https://github.com/user-attachments/assets/d8275bb3-98d7-4987-a806-13c1d588c045" />
 The homepage is featuring sections like New Releases, Trending artists, and a search bar you can use to explore the archive. It highlights dynamic data fetched from the database, presented using an autoplay slider for a visually engaging experience.
 <br>
+<br>
 The New Releases section updates when music albums with a release date closer to present day are added to the archive. 
 <br>
 <br>
@@ -26,11 +27,11 @@ Trending artists section updates as you visit different artists' pages, like thi
 <br>
 <br>
 <img width="1220" alt="artists-page" src="https://github.com/user-attachments/assets/d806e3c2-5e96-474f-81b6-6db5cf2d1c8d" />
-You can find all artists displayed on a single page and use the sorting options as you like:
+You can find all artists displayed on a single page and use the sorting options as you like.
 <br>
 <br>
 <img width="1222" alt="albums-page" src="https://github.com/user-attachments/assets/d219f82b-1eb8-4d28-be01-c6684ca9640b" />
-Or you can go straight to the Albums page:
+Or you can go straight to the Albums page.
 <br>
 <br>
 <img width="1219" alt="album-page" src="https://github.com/user-attachments/assets/8fd66a6d-b87a-45f6-b399-c98487955de3" />
