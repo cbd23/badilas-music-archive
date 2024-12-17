@@ -73,7 +73,7 @@ I didn't want to use an API for fetching the music albums / artists / genres or 
   - every API has its limitations and its risks - so I decided that I'm going to work in order to be able to serve myself the info that I'll be using; speaking about risks, I didn't want to develop this project around an API that may not be live one day.
 
 <br>
-You can browse to my other repos to see what I've been working on lately or you can <a href="https://www.linkedin.com/in/catalin-badila/">connect with me on linkedin</a> and say hi if you want
+You can browse my other repos to see what I've been working on lately or you can <a href="https://www.linkedin.com/in/catalin-badila/">connect with me on linkedin</a> and say hi if you want.
 <br>
 <br>
 
