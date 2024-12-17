@@ -11,6 +11,7 @@ import genresRouter from "./routes/genresRouter.js"
 import labelsRouter from "./routes/labelsRouter.js"
 import searchRouter from "./routes/searchRouter.js"
 import aboutRouter from "./routes/aboutRouter.js"
+import newRouter from "./routes/newRouter.js"
 
 // define __filename & __dirname for ejs setup using ESM
 const __filename = fileURLToPath(import.meta.url)
@@ -30,6 +31,7 @@ app.use(express.static(assetsPath))
 app.use(express.urlencoded({ extended: true }))
 
 // assign routers
+app.use("/new", newRouter)
 app.use("/search", searchRouter)
 app.use("/artists", artistsRouter)
 app.use("/albums", albumsRouter)
@@ -42,5 +44,4 @@ app.use("/", indexRouter)
 const PORT = process.env.PORT || 3000
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`server is running on PORT:${PORT}`)
-    console.log('DATABASE_PUBLIC_URL', process.env.DATABASE_PUBLIC_URL)
 })
