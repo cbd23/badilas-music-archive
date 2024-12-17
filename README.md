@@ -17,35 +17,35 @@ The project aims to become a dynamic hub where music enthusiasts can share what 
 
 <img width="1468" alt="homepage" src="https://github.com/user-attachments/assets/d8275bb3-98d7-4987-a806-13c1d588c045" />
 The homepage is featuring sections like New Releases, Trending artists, and a search bar you can use to explore the archive. It highlights dynamic data fetched from the database, presented using an autoplay slider for a visually engaging experience.
-
+<br>
 The New Releases section updates when music albums with a release date closer to present day are added to the archive. 
-
-
+<br>
+<br>
 <img width="1206" alt="artist-page" src="https://github.com/user-attachments/assets/4afbed5d-e933-485a-850f-3a60726f0b56" />
 Trending artists section updates as you visit different artists' pages, like this one. This action increments the artist's popularity rating.
-
-
+<br>
+<br>
 <img width="1220" alt="artists-page" src="https://github.com/user-attachments/assets/d806e3c2-5e96-474f-81b6-6db5cf2d1c8d" />
 You can find all artists displayed on a single page and use the sorting options as you like:
-
-
+<br>
+<br>
 <img width="1222" alt="albums-page" src="https://github.com/user-attachments/assets/d219f82b-1eb8-4d28-be01-c6684ca9640b" />
 Or you can go straight to the Albums page:
-
-
+<br>
+<br>
 <img width="1219" alt="album-page" src="https://github.com/user-attachments/assets/8fd66a6d-b87a-45f6-b399-c98487955de3" />
 By visiting a music album, you increase their 'times listened' score, so you can see different results when sorting the albums by 'Most played' after you navigate through the albums.
-
-
-
+<br>
+<br>
+<br>
 Other options to discover music albums are the Genres page:
 <img width="1218" alt="genres-page" src="https://github.com/user-attachments/assets/e9503ead-8c26-4e21-b45e-68460b1096cb" />
-
-
+<br>
+<br>
 The Labels page:
 <img width="1216" alt="labels-page" src="https://github.com/user-attachments/assets/bc361110-635f-4fd3-ada2-f168395c4e55" />
-
-
+<br>
+<br>
 or the search bar - which returns both albums and artists based on your input, even if it is incomplete.
 <img width="1219" alt="search-result" src="https://github.com/user-attachments/assets/54957039-c000-4726-bcdf-4b841c09b806" />
 
